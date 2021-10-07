@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <title>Todo List</title>
+    <style>
+        
+        h1 {
+            text-align: center;
+        }
+
+        #form {
+            margin-left: auto;
+            margin-right: auto;
+            width: 50vw;
+        }
+
+        #cards {
+            margin-left: auto;
+            margin-right: auto;
+            width: 75vw;
+        }
+
+        .d-flex {
+            column-gap: 15px;
+        }
+
+        input[type="text"], input[type="number"] {
+            margin-top: 5px;
+            border: 1px solid #c2c2c2;
+            box-shadow: 1px 1px 4px #ebebeb;
+            border-radius: 3px;
+            padding: 4px;
+            outline: none; 
+            width: 50vw;         
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="container" id="form">
+        <h1 id="title">Todo List</h1>
+
+        <form class="form needs-validation" id="form-field" novalidate>
+            <label for="task">Task</label>
+            <br>
+            <div class="input-group has-validation">
+                <input type="text" class="form-control" id="task" aria-describedby="inputGroupPrepend" required>
+                <div class="invalid-feedback">
+                    Please fill out this field.
+                </div>
+            </div>
+            <br>
+            <label for="time">Days To Complete</label>
+            <br>
+            <div class="input-group has-validation">
+                <input type="number" class="form-control" id="time" aria-describedby="inputGroupPrepend" required min="1">
+                <div class="invalid-feedback">
+                    Please enter a number no less than 1.
+                </div>
+            </div>
+            <br>
+            <button class="btn btn-primary" id="addTask" onclick="add_task()">Submit</button>
+		</form>  
+    </div> 
+        
+    <div class="container" id="cards">
+        <hr>
+        <div class="d-flex flex-start flex-wrap" id="TaskPlaceholder"></div>
+    </div>
+
+    <script src="functions.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+</body>
+</html>
